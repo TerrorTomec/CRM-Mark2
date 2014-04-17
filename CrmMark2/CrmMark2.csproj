@@ -119,4 +119,10 @@
     <BundleResource Include="Resources\test_icon.png" />
     <BundleResource Include="Resources\test_icon_red.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CRMCore\CRMCore.csproj">
+      <Project>{F926838A-BC43-47B6-B944-7C07DC2095F8}</Project>
+      <Name>CRMCore</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

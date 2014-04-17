@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmMark2", "CrmMark2\CrmMark2.csproj", "{2E8E67F6-1C4D-47B4-9511-5AC84BE8D00B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRMCore", "CRMCore\CRMCore.csproj", "{F926838A-BC43-47B6-B944-7C07DC2095F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -11,6 +13,7 @@ Global
 		Release|iPhone = Release|iPhone
 		Ad-Hoc|iPhone = Ad-Hoc|iPhone
 		AppStore|iPhone = AppStore|iPhone
+		Wulff Testflight|iPhone = Wulff Testflight|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2E8E67F6-1C4D-47B4-9511-5AC84BE8D00B}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
@@ -25,6 +28,22 @@ Global
 		{2E8E67F6-1C4D-47B4-9511-5AC84BE8D00B}.Release|iPhone.Build.0 = Release|iPhone
 		{2E8E67F6-1C4D-47B4-9511-5AC84BE8D00B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{2E8E67F6-1C4D-47B4-9511-5AC84BE8D00B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{2E8E67F6-1C4D-47B4-9511-5AC84BE8D00B}.Wulff Testflight|iPhone.ActiveCfg = Debug|iPhone
+		{2E8E67F6-1C4D-47B4-9511-5AC84BE8D00B}.Wulff Testflight|iPhone.Build.0 = Debug|iPhone
+		{F926838A-BC43-47B6-B944-7C07DC2095F8}.Ad-Hoc|iPhone.ActiveCfg = Wulff Testflight|iPhone
+		{F926838A-BC43-47B6-B944-7C07DC2095F8}.Ad-Hoc|iPhone.Build.0 = Wulff Testflight|iPhone
+		{F926838A-BC43-47B6-B944-7C07DC2095F8}.AppStore|iPhone.ActiveCfg = Wulff Testflight|iPhone
+		{F926838A-BC43-47B6-B944-7C07DC2095F8}.AppStore|iPhone.Build.0 = Wulff Testflight|iPhone
+		{F926838A-BC43-47B6-B944-7C07DC2095F8}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{F926838A-BC43-47B6-B944-7C07DC2095F8}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{F926838A-BC43-47B6-B944-7C07DC2095F8}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{F926838A-BC43-47B6-B944-7C07DC2095F8}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{F926838A-BC43-47B6-B944-7C07DC2095F8}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{F926838A-BC43-47B6-B944-7C07DC2095F8}.Release|iPhone.Build.0 = Release|Any CPU
+		{F926838A-BC43-47B6-B944-7C07DC2095F8}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{F926838A-BC43-47B6-B944-7C07DC2095F8}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{F926838A-BC43-47B6-B944-7C07DC2095F8}.Wulff Testflight|iPhone.ActiveCfg = Wulff Testflight|iPhone
+		{F926838A-BC43-47B6-B944-7C07DC2095F8}.Wulff Testflight|iPhone.Build.0 = Wulff Testflight|iPhone
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = CrmMark2\CrmMark2.csproj
