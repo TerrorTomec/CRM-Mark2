@@ -4,6 +4,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreGraphics;
 using MonoTouch.CoreAnimation;
+using System.Text;
 
 namespace CrmMark2
 {
@@ -21,9 +22,21 @@ namespace CrmMark2
 		{	
 			ItemSize = new SizeF (ITEM_SIZE, ITEM_SIZE);
 			ScrollDirection = UICollectionViewScrollDirection.Vertical;
-			SectionInset = new UIEdgeInsets(65, 0, 600, 0);
+			SectionInset = new UIEdgeInsets(65, 0, 100, 0);
 			MinimumLineSpacing = 20.0f;
-			MinimumInteritemSpacing = 1000f;
+			MinimumInteritemSpacing = 0f;
+
+			var fontList = new StringBuilder();
+			var familyNames = UIFont.FamilyNames;
+			foreach (var familyName in familyNames ){
+				fontList.Append(String.Format("Family: {0}\n", familyName));
+				Console.WriteLine("Family: {0}\n", familyName);
+				var fontNames = UIFont.FontNamesForFamilyName(familyName);
+				foreach (var fontName in fontNames ){
+					Console.WriteLine("\tFont: {0}\n", fontName);
+					fontList.Append(String.Format("\tFont: {0}\n", fontName));
+				}
+			};
 		}
 
 		public override bool ShouldInvalidateLayoutForBoundsChange (RectangleF newBounds)

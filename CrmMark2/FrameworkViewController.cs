@@ -8,7 +8,7 @@ namespace CrmMark2
 {
 	public partial class FrameworkViewController : UIViewController
 	{
-		int mainMenuWidth = 50;
+		int mainMenuWidth = 75;
 
 		MainMenuCollectionViewController mainMenuViewController;
 

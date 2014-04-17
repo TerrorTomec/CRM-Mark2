@@ -106,7 +106,9 @@
     <Compile Include="FrameworkViewController.designer.cs">
       <DependentUpon>FrameworkViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMenu\MenuCell.cs" />
+    <Compile Include="MainMenu\MenuCell.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="MainMenu\MainMenuItem.cs" />
     <Compile Include="MainMenu\MainMenuFlowLayout.cs" />
     <Compile Include="MainMenu\MainMenuCollectionViewController.cs" />
@@ -118,5 +120,8 @@
   <ItemGroup>
     <BundleResource Include="Resources\test_icon.png" />
     <BundleResource Include="Resources\test_icon_red.png" />
+    <BundleResource Include="Resources\test_icon_1.png" />
+    <BundleResource Include="Resources\test_icon_2.png" />
+    <BundleResource Include="Resources\test_icon_3.png" />
   </ItemGroup>
 </Project>

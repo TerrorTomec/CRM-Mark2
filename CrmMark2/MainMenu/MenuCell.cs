@@ -13,6 +13,7 @@ namespace CrmMark2
 	{
 		public UIImage Image { get { return imageView.Image; } set { imageView.Image = value; UpdateCellImage();} }
 		public string Text { set { label.Text = value; } }
+		public UIColor TextColor { set { label.TextColor = value; } }
 
 		UIImageView imageView;
 		UILabel label;
@@ -34,10 +35,10 @@ namespace CrmMark2
 			imageView.Transform = CGAffineTransform.MakeScale(1.0f, 1.0f);
 
 			label = new UILabel();
-			label.Frame = new RectangleF(-10, 30, 100, 70);
+			label.Frame = new RectangleF(-10, 35, 100, 70);
 			label.TextAlignment = UITextAlignment.Center;
 			label.BackgroundColor = UIColor.Red.ColorWithAlpha(0);
-			label.Font = UIFont.FromName("HelveticaNeue-Light", 14f);
+			label.Font = UIFont.FromName("Avenir-Medium", 15f);  //("HelveticaNeue-Light", 14f);
 			label.TextColor = UIColor.White;
 
 			ContentView.AddSubview(imageView);

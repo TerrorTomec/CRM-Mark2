@@ -30,7 +30,7 @@ namespace CrmMark2
             base.ViewDidLoad ();
 
 			CollectionView.ContentSize = new SizeF(200, 400);
-			CollectionView.BackgroundColor = UIColor.DarkGray.ColorWithAlpha(0f);
+			CollectionView.BackgroundColor = new UIColor(0.1f, 0.1f, 0.1f, 1f);
 			//CollectionView.BackgroundColor = UIColor.DarkGray.ColorWithAlpha(0.6f);
 
             CollectionView.RegisterClassForCell (typeof(MenuCell), mainCellId);
@@ -56,6 +56,7 @@ namespace CrmMark2
 
             cell.Image = menuItem.Image;
 			cell.Text = menuItem.Name;
+			cell.TextColor = menuItem.TextColor;
 
             return cell;
         }
@@ -99,6 +100,13 @@ namespace CrmMark2
 
 		void SelectItem(UICollectionView collectionView, int row)
 		{
+			foreach (var item in menuItems)
+				item.Selected = false;
+
+			//Make the icon selected
+			menuItems[row].Selected = true;
+			collectionView.ReloadData();
+
 			//collectionView.SetContentOffset(new PointF(0, row * 100 + 20), true); //+15
 			//frameController.SetupSubMenuViewController(menuItems[row]);
 		}
