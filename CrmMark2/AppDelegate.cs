@@ -29,7 +29,7 @@ namespace CrmMark2
 			viewController = new FrameworkViewController();
 			window.RootViewController = viewController;
 			window.MakeKeyAndVisible();
-			
+
 			return true;
 		}
 	}

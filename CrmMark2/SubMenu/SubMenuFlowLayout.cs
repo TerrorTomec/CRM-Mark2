@@ -1,47 +1,48 @@
 using System;
-using System.Drawing;
-using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using System.Drawing;
 using MonoTouch.CoreGraphics;
-using MonoTouch.CoreAnimation;
-using System.Text;
 
 namespace CrmMark2
 {
-	public class MainMenuFlowLayout : UICollectionViewFlowLayout
+	public class SubMenuFlowLayout : UICollectionViewFlowLayout
 	{
 		public const float ITEM_SIZE = 80.0f;
-		public const int ACTIVE_DISTANCE = 20;
+		public const int ACTIVE_DISTANCE = 100;
 		public const float ZOOM_FACTOR = 0.3f;
 
-		MainMenuCollectionViewController parentController;
-
-		public MainMenuCollectionViewController Controller { get { return parentController; } set { parentController = value; } }
-
-		public MainMenuFlowLayout ()
+		public SubMenuFlowLayout (int itemsCount, float width)
 		{	
 			ItemSize = new SizeF (ITEM_SIZE, ITEM_SIZE);
-			ScrollDirection = UICollectionViewScrollDirection.Vertical;
-			SectionInset = new UIEdgeInsets(65, 0, 100, 0);
-			MinimumLineSpacing = 20.0f;
-			MinimumInteritemSpacing = 0f;
+			ScrollDirection = UICollectionViewScrollDirection.Horizontal;
+			//SectionInset = new UIEdgeInsets(0, 100, 0, 0);
+			//MinimumLineSpacing = 100.0f;
+			MinimumInteritemSpacing = 1000f;
+
+			UpdateWidth(itemsCount, width);
+		}
+
+		public void UpdateWidth(int itemsCount, float width)
+		{
+			float interval = width / (itemsCount + 1);
+
+			SectionInset = new UIEdgeInsets(0, interval - ITEM_SIZE / 2, 0, 0);
+			MinimumLineSpacing = interval - ITEM_SIZE;
 		}
 
 		public override bool ShouldInvalidateLayoutForBoundsChange (RectangleF newBounds)
 		{
 			return true;
 		}
-		
+
 		public override UICollectionViewLayoutAttributes[] LayoutAttributesForElementsInRect (RectangleF rect)
 		{
 			var array = base.LayoutAttributesForElementsInRect (rect);
-            var visibleRect = new RectangleF (CollectionView.ContentOffset, CollectionView.Bounds.Size);
+			var visibleRect = new RectangleF (CollectionView.ContentOffset, CollectionView.Bounds.Size);
 
-			for (int i = 0; i < array.Length; i++)
+			foreach (var attributes in array) 
 			{
-				var attributes = array[i];
-
-				if (attributes.Frame.IntersectsWith(rect))
+				if (attributes.Frame.IntersectsWith (rect)) 
 				{
 					float distance = visibleRect.GetMidX () - attributes.Center.X;
 					float normalizedDistance = distance / ACTIVE_DISTANCE;
@@ -54,7 +55,6 @@ namespace CrmMark2
 					}
 				}
 			}
-
 			return array;
 		}
 
@@ -72,6 +72,7 @@ namespace CrmMark2
 			}
 			return new PointF (proposedContentOffset.X + offSetAdjustment, proposedContentOffset.Y);
 		}
+
 	}
 }
 

@@ -94,6 +94,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="MainMenu\" />
+    <Folder Include="SubMenu\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -112,6 +113,9 @@
     <Compile Include="MainMenu\MainMenuItem.cs" />
     <Compile Include="MainMenu\MainMenuFlowLayout.cs" />
     <Compile Include="MainMenu\MainMenuCollectionViewController.cs" />
+    <Compile Include="SubMenu\SubMenuCollectionViewController.cs" />
+    <Compile Include="SubMenu\SubMenuFlowLayout.cs" />
+    <Compile Include="SubMenu\SubMenuItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="FrameworkViewController.xib" />

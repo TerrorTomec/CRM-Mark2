@@ -14,7 +14,7 @@ namespace CrmMark2
 		FrameworkViewController frameController;
 		List<MainMenuItem> menuItems;
 
-		public FrameworkViewController MainController{ get { return frameController; } set { frameController = value; } }
+		public FrameworkViewController Framework { get { return frameController; } set { frameController = value; } }
 
         public MainMenuCollectionViewController (UICollectionViewLayout layout) : base (layout)
         {
@@ -31,8 +31,6 @@ namespace CrmMark2
 
 			CollectionView.ContentSize = new SizeF(200, 400);
 			CollectionView.BackgroundColor = new UIColor(0.1f, 0.1f, 0.1f, 1f);
-			//CollectionView.BackgroundColor = UIColor.DarkGray.ColorWithAlpha(0.6f);
-
             CollectionView.RegisterClassForCell (typeof(MenuCell), mainCellId);
 		}
 
@@ -106,6 +104,8 @@ namespace CrmMark2
 			//Make the icon selected
 			menuItems[row].Selected = true;
 			collectionView.ReloadData();
+
+			frameController.SetupSubmenu(menuItems[row]);
 
 			//collectionView.SetContentOffset(new PointF(0, row * 100 + 20), true); //+15
 			//frameController.SetupSubMenuViewController(menuItems[row]);
